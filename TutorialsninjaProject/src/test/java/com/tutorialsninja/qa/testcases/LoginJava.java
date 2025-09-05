@@ -11,7 +11,7 @@ public class LoginJava {
 
 	@Test
 
-	public void verifyLoginPage() {
+	public void verifyLoginWithValidCredentials() {
 		driver = new FirefoxDriver();
 		driver.get("https://tutorialsninja.com/demo/");
 		driver.findElement(By.linkText("My Account")).click();
@@ -27,5 +27,27 @@ public class LoginJava {
 		Assert.assertEquals(actualValue, expectedValue);
 		driver.quit();
 		}
+	
+	
+	@Test
 
+	public void verifyLoginWithInValidCredentials() {
+		driver = new FirefoxDriver();
+		driver.get("https://tutorialsninja.com/demo/");
+		driver.findElement(By.linkText("My Account")).click();
+		driver.findElement(By.linkText("Login")).click();
+		driver.findElement(By.xpath("//input[@id='input-email']")).sendKeys("mairaj12345678123@gmail.com");
+		driver.findElement(By.xpath("//input[@id='input-password']")).sendKeys("mairaj");
+		driver.findElement(By.xpath("//input[@value='Login']")).click();
+		String actualValue=driver.findElement(By.xpath("//div[contains(@class,'alert-dismissible')]")).getText();
+		String expectedValue="Warning: No match for E-Mail Address and/or Password.";
+		Assert.assertEquals(actualValue, expectedValue);
+		driver.quit();
+		}
+
+	
+	
+
+	
+	
 }
