@@ -19,8 +19,13 @@ public class LoginJava {
 		driver.findElement(By.xpath("//input[@id='input-email']")).sendKeys("mairaj12345678@gmail.com");
 		driver.findElement(By.xpath("//input[@id='input-password']")).sendKeys("mairaj");
 		driver.findElement(By.xpath("//input[@value='Login']")).click();
-		Assert.assertTrue(driver.findElement(By.xpath("//a[normalize-space()='Edit your account information']")).isDisplayed());
+		Assert.assertTrue(
+				driver.findElement(By.xpath("//a[normalize-space()='Edit your account information']")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//a[normalize-space()='Account']")).isDisplayed());
+		String expectedValue="Account";
+		String actualValue=driver.findElement(By.xpath("//a[normalize-space()='Account']")).getText();
+		Assert.assertEquals(actualValue, expectedValue);
 		driver.quit();
-	}
+		}
 
 }

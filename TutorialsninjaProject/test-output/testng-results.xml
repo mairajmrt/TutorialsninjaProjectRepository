@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-04T19:40:19 IST" name="Default suite" finished-at="2025-09-04T19:40:28 IST" duration-ms="9572">
+  <suite started-at="2025-09-05T15:05:45 IST" name="Default suite" finished-at="2025-09-05T15:06:14 IST" duration-ms="29604">
     <groups>
     </groups>
-    <test started-at="2025-09-04T19:40:19 IST" name="Default test" finished-at="2025-09-04T19:40:28 IST" duration-ms="9572">
+    <test started-at="2025-09-05T15:05:45 IST" name="Default test" finished-at="2025-09-05T15:06:14 IST" duration-ms="29604">
       <class name="com.tutorialsninja.qa.testcases.LoginJava">
-        <test-method signature="verifyLoginPage()[pri:0, instance:com.tutorialsninja.qa.testcases.LoginJava@6bbe85a8]" started-at="2025-09-04T19:40:19 IST" name="verifyLoginPage" finished-at="2025-09-04T19:40:28 IST" duration-ms="9523" status="PASS">
+        <test-method signature="verifyLoginPage()[pri:0, instance:com.tutorialsninja.qa.testcases.LoginJava@6bbe85a8]" started-at="2025-09-05T15:05:45 IST" name="verifyLoginPage" finished-at="2025-09-05T15:06:14 IST" duration-ms="29555" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLoginPage -->
