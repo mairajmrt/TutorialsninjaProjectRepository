@@ -32,7 +32,7 @@ public class LoginJava {
 
 	@Test(priority = 2)
 
-	public void verifyLoginWithInValidCredentials() {
+	public void verifyLoginWithInvalidEmailAndValidPassword() {
 		driver = new FirefoxDriver();
 		driver.get("https://tutorialsninja.com/demo/");
 		driver.findElement(By.linkText("My Account")).click();
@@ -48,7 +48,7 @@ public class LoginJava {
 
 	@Test(priority = 3)
 
-	public void verifyLoginWithValidEMailAndWrongPassword() {
+	public void verifyLoginWithValidEMailAndInvalidPassword() {
 		driver = new FirefoxDriver();
 		driver.get("https://tutorialsninja.com/demo/");
 		driver.findElement(By.linkText("My Account")).click();
@@ -64,7 +64,7 @@ public class LoginJava {
 
 	@Test(priority = 4)
 
-	public void verifyLoginWithNoEMailNoPassword() {
+	public void verifyLoginWithInvalidEMailAndInvalidPassword() {
 		driver = new FirefoxDriver();
 		driver.get("https://tutorialsninja.com/demo/");
 		driver.findElement(By.linkText("My Account")).click();
@@ -77,11 +77,25 @@ public class LoginJava {
 		Assert.assertEquals(actualValue, expectedValue);
 		driver.quit();
 	}
-	
 	@Test(priority = 5)
+
+	public void verifyLoginWithInvalidEMailAndValidPassword() {
+		driver = new FirefoxDriver();
+		driver.get("https://tutorialsninja.com/demo/");
+		driver.findElement(By.linkText("My Account")).click();
+		driver.findElement(By.linkText("Login")).click();
+		driver.findElement(By.xpath("//input[@id='input-email']")).sendKeys("mairaj1234567845678@gmail.com");
+		driver.findElement(By.xpath("//input[@id='input-password']")).sendKeys("mairaj");
+		driver.findElement(By.xpath("//input[@value='Login']")).click();
+		String actualValue = driver.findElement(By.xpath("//div[contains(@class,'alert-dismissible')]")).getText();
+		String expectedValue = "Warning: No match for E-Mail Address and/or Password.";
+		Assert.assertEquals(actualValue, expectedValue);
+		driver.quit();
+	}
+	@Test(priority = 6)
 	public void verifyTimeStampWithDate() {
 		Date date=new Date();
-		System.out.println(date.toString());
+		System.out.println(date.toString().replaceAll(" ", ""));
 		
 	}
 
