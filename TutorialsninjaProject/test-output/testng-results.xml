@@ -1,37 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-05T18:14:07 IST" name="Default suite" finished-at="2025-09-05T18:14:52 IST" duration-ms="44676">
+  <suite started-at="2025-09-08T18:22:38 IST" name="Default suite" finished-at="2025-09-08T18:22:49 IST" duration-ms="10413">
     <groups>
     </groups>
-    <test started-at="2025-09-05T18:14:07 IST" name="Default test" finished-at="2025-09-05T18:14:52 IST" duration-ms="44676">
-      <class name="com.tutorialsninja.qa.testcases.LoginJava">
-        <test-method signature="verifyLoginWithValidCredentials()[pri:1, instance:com.tutorialsninja.qa.testcases.LoginJava@53fb3dab]" started-at="2025-09-05T18:14:07 IST" name="verifyLoginWithValidCredentials" finished-at="2025-09-05T18:14:19 IST" duration-ms="11876" status="PASS">
+    <test started-at="2025-09-08T18:22:38 IST" name="Default test" finished-at="2025-09-08T18:22:49 IST" duration-ms="10413">
+      <class name="com.tutorialsninja.qa.testcases.Register">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.tutorialsninja.qa.testcases.Register@35dab4eb]" started-at="2025-09-08T18:22:38 IST" name="setup" finished-at="2025-09-08T18:22:45 IST" duration-ms="6634" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyLoginWithValidCredentials -->
-        <test-method signature="verifyLoginWithInvalidEmailAndValidPassword()[pri:2, instance:com.tutorialsninja.qa.testcases.LoginJava@53fb3dab]" started-at="2025-09-05T18:14:19 IST" name="verifyLoginWithInvalidEmailAndValidPassword" finished-at="2025-09-05T18:14:27 IST" duration-ms="8283" status="PASS">
+        </test-method> <!-- setup -->
+        <test-method signature="verifyRegisterPage()[pri:0, instance:com.tutorialsninja.qa.testcases.Register@35dab4eb]" started-at="2025-09-08T18:22:45 IST" name="verifyRegisterPage" finished-at="2025-09-08T18:22:48 IST" duration-ms="2628" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyLoginWithInvalidEmailAndValidPassword -->
-        <test-method signature="verifyLoginWithValidEMailAndInvalidPassword()[pri:3, instance:com.tutorialsninja.qa.testcases.LoginJava@53fb3dab]" started-at="2025-09-05T18:14:27 IST" name="verifyLoginWithValidEMailAndInvalidPassword" finished-at="2025-09-05T18:14:36 IST" duration-ms="8828" status="PASS">
+        </test-method> <!-- verifyRegisterPage -->
+        <test-method is-config="true" signature="terDOwn()[pri:0, instance:com.tutorialsninja.qa.testcases.Register@35dab4eb]" started-at="2025-09-08T18:22:48 IST" name="terDOwn" finished-at="2025-09-08T18:22:49 IST" duration-ms="1098" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyLoginWithValidEMailAndInvalidPassword -->
-        <test-method signature="verifyLoginWithInvalidEMailAndInvalidPassword()[pri:4, instance:com.tutorialsninja.qa.testcases.LoginJava@53fb3dab]" started-at="2025-09-05T18:14:36 IST" name="verifyLoginWithInvalidEMailAndInvalidPassword" finished-at="2025-09-05T18:14:44 IST" duration-ms="8042" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyLoginWithInvalidEMailAndInvalidPassword -->
-        <test-method signature="verifyLoginWithInvalidEMailAndValidPassword()[pri:5, instance:com.tutorialsninja.qa.testcases.LoginJava@53fb3dab]" started-at="2025-09-05T18:14:44 IST" name="verifyLoginWithInvalidEMailAndValidPassword" finished-at="2025-09-05T18:14:52 IST" duration-ms="7509" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyLoginWithInvalidEMailAndValidPassword -->
-        <test-method signature="verifyTimeStampWithDate()[pri:6, instance:com.tutorialsninja.qa.testcases.LoginJava@53fb3dab]" started-at="2025-09-05T18:14:52 IST" name="verifyTimeStampWithDate" finished-at="2025-09-05T18:14:52 IST" duration-ms="54" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyTimeStampWithDate -->
-      </class> <!-- com.tutorialsninja.qa.testcases.LoginJava -->
+        </test-method> <!-- terDOwn -->
+      </class> <!-- com.tutorialsninja.qa.testcases.Register -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

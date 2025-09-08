@@ -1,4 +1,4 @@
-package Base;
+package com.tutorialsninja.qa.utility;
 
 import java.time.Duration;
 
@@ -11,7 +11,7 @@ import org.openqa.selenium.safari.SafariDriver;
 
 public class Base {
 
-	public  WebDriver driver;
+	public WebDriver driver;
 
 	public void openBrowserApplication() {
 		String browserName = "firefox";

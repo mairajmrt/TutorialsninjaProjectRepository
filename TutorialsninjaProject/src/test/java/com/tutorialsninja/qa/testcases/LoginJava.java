@@ -1,21 +1,24 @@
 package com.tutorialsninja.qa.testcases;
 
-import java.util.Date;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import com.tutorialsninja.qa.utility.Base;
 
-public class LoginJava {
+public class LoginJava extends Base {
 
-	private FirefoxDriver driver;
+	@BeforeMethod
+
+	public void setup() {
+		openBrowserApplication();
+	}
 
 	@Test(priority = 1)
 
 	public void verifyLoginWithValidCredentials() {
-		driver = new FirefoxDriver();
-		driver.get("https://tutorialsninja.com/demo/");
+
 		driver.findElement(By.linkText("My Account")).click();
 		driver.findElement(By.linkText("Login")).click();
 		driver.findElement(By.xpath("//input[@id='input-email']")).sendKeys("mairaj12345678@gmail.com");
@@ -27,14 +30,12 @@ public class LoginJava {
 		String expectedValue = "Account";
 		String actualValue = driver.findElement(By.xpath("//a[normalize-space()='Account']")).getText();
 		Assert.assertEquals(actualValue, expectedValue);
-		driver.quit();
+
 	}
 
 	@Test(priority = 2)
 
 	public void verifyLoginWithInvalidEmailAndValidPassword() {
-		driver = new FirefoxDriver();
-		driver.get("https://tutorialsninja.com/demo/");
 		driver.findElement(By.linkText("My Account")).click();
 		driver.findElement(By.linkText("Login")).click();
 		driver.findElement(By.xpath("//input[@id='input-email']")).sendKeys("mairaj12345678123@gmail.com");
@@ -43,14 +44,12 @@ public class LoginJava {
 		String actualValue = driver.findElement(By.xpath("//div[contains(@class,'alert-dismissible')]")).getText();
 		String expectedValue = "Warning: No match for E-Mail Address and/or Password.";
 		Assert.assertEquals(actualValue, expectedValue);
-		driver.quit();
+
 	}
 
 	@Test(priority = 3)
 
 	public void verifyLoginWithValidEMailAndInvalidPassword() {
-		driver = new FirefoxDriver();
-		driver.get("https://tutorialsninja.com/demo/");
 		driver.findElement(By.linkText("My Account")).click();
 		driver.findElement(By.linkText("Login")).click();
 		driver.findElement(By.xpath("//input[@id='input-email']")).sendKeys("mairaj12345678@gmail.com");
@@ -59,14 +58,13 @@ public class LoginJava {
 		String actualValue = driver.findElement(By.xpath("//div[contains(@class,'alert-dismissible')]")).getText();
 		String expectedValue = "Warning: No match for E-Mail Address and/or Password.";
 		Assert.assertEquals(actualValue, expectedValue);
-		driver.quit();
+
 	}
 
 	@Test(priority = 4)
 
 	public void verifyLoginWithInvalidEMailAndInvalidPassword() {
-		driver = new FirefoxDriver();
-		driver.get("https://tutorialsninja.com/demo/");
+
 		driver.findElement(By.linkText("My Account")).click();
 		driver.findElement(By.linkText("Login")).click();
 		driver.findElement(By.xpath("//input[@id='input-email']")).sendKeys("");
@@ -75,28 +73,30 @@ public class LoginJava {
 		String actualValue = driver.findElement(By.xpath("//div[contains(@class,'alert-dismissible')]")).getText();
 		String expectedValue = "Warning: No match for E-Mail Address and/or Password.";
 		Assert.assertEquals(actualValue, expectedValue);
-		driver.quit();
+
 	}
+
 	@Test(priority = 5)
 
 	public void verifyLoginWithInvalidEMailAndValidPassword() {
-		driver = new FirefoxDriver();
-		driver.get("https://tutorialsninja.com/demo/");
+
 		driver.findElement(By.linkText("My Account")).click();
 		driver.findElement(By.linkText("Login")).click();
 		driver.findElement(By.xpath("//input[@id='input-email']")).sendKeys("mairaj1234567845678@gmail.com");
 		driver.findElement(By.xpath("//input[@id='input-password']")).sendKeys("mairaj");
 		driver.findElement(By.xpath("//input[@value='Login']")).click();
 		String actualValue = driver.findElement(By.xpath("//div[contains(@class,'alert-dismissible')]")).getText();
-		String expectedValue = "Warning: No match for E-Mail Address and/or Password.";
+		String expectedValue = "Warning: No match for E-Mail Address and/or Password...";
 		Assert.assertEquals(actualValue, expectedValue);
-		driver.quit();
+
 	}
-	@Test(priority = 6)
-	public void verifyTimeStampWithDate() {
-		Date date=new Date();
-		System.out.println(date.toString().replaceAll(" ", ""));
-		
+
+	@AfterMethod
+
+	public void terDOwn() {
+		if (driver != null) {
+			driver.quit();
+		}
 	}
 
 }
