@@ -21,21 +21,22 @@ public class SearchProduct extends Base {
 	void serachValidProduct() {
 		driver.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys("HP");
 		driver.findElement(By.xpath("//button[@class='btn btn-default btn-lg']")).click();
-		String actaulProductName=driver.findElement(By.xpath("//a[normalize-space()='HP LP3065']")).getText();
-		String expectedProductName="HP LP3065";
+		String actaulProductName = driver.findElement(By.xpath("//a[normalize-space()='HP LP3065']")).getText();
+		String expectedProductName = "HP LP3065";
 		Assert.assertEquals(actaulProductName, expectedProductName);
 	}
-	
+
 	@Test(priority = 2)
 
 	void serachInValidProduct() {
 		driver.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys("HP123");
 		driver.findElement(By.xpath("//button[@class='btn btn-default btn-lg']")).click();
-		String actaulProductName=driver.findElement(By.xpath("//p[contains(text(),'There is no product that matches the search criter')]")).getText();
-		String expectedProductName="There is no product that matches the search criteria.";
+		String actaulProductName = driver
+				.findElement(By.xpath("//p[contains(text(),'There is no product that matches the search criter')]"))
+				.getText();
+		String expectedProductName = "There is no product that matches the search criteria.";
 		Assert.assertEquals(actaulProductName, expectedProductName);
 	}
-
 
 	@AfterMethod
 
