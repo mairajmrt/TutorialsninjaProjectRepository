@@ -2,36 +2,36 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-09T15:15:07 IST" name="Default suite" finished-at="2025-09-09T15:15:22 IST" duration-ms="15438">
+  <suite started-at="2025-09-09T18:37:30 IST" name="Default suite" finished-at="2025-09-09T18:37:44 IST" duration-ms="13973">
     <groups>
     </groups>
-    <test started-at="2025-09-09T15:15:07 IST" name="Default test" finished-at="2025-09-09T15:15:22 IST" duration-ms="15438">
-      <class name="com.tutorialsninja.qa.testcases.Register">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.tutorialsninja.qa.testcases.Register@2d901eb0]" started-at="2025-09-09T15:15:07 IST" name="setup" finished-at="2025-09-09T15:15:12 IST" duration-ms="5865" status="PASS">
+    <test started-at="2025-09-09T18:37:30 IST" name="Default test" finished-at="2025-09-09T18:37:44 IST" duration-ms="13973">
+      <class name="com.tutorialsninja.qa.testcases.SearchProduct">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.tutorialsninja.qa.testcases.SearchProduct@8519cb4]" started-at="2025-09-09T18:37:30 IST" name="setup" finished-at="2025-09-09T18:37:35 IST" duration-ms="5211" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyRegisterPage()[pri:0, instance:com.tutorialsninja.qa.testcases.Register@2d901eb0]" started-at="2025-09-09T15:15:12 IST" name="verifyRegisterPage" finished-at="2025-09-09T15:15:14 IST" duration-ms="1864" status="PASS">
+        <test-method signature="serachValidProduct()[pri:1, instance:com.tutorialsninja.qa.testcases.SearchProduct@8519cb4]" started-at="2025-09-09T18:37:35 IST" name="serachValidProduct" finished-at="2025-09-09T18:37:36 IST" duration-ms="484" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyRegisterPage -->
-        <test-method is-config="true" signature="terDOwn()[pri:0, instance:com.tutorialsninja.qa.testcases.Register@2d901eb0]" started-at="2025-09-09T15:15:14 IST" name="terDOwn" finished-at="2025-09-09T15:15:15 IST" duration-ms="951" status="PASS">
+        </test-method> <!-- serachValidProduct -->
+        <test-method is-config="true" signature="terDOwn()[pri:0, instance:com.tutorialsninja.qa.testcases.SearchProduct@8519cb4]" started-at="2025-09-09T18:37:36 IST" name="terDOwn" finished-at="2025-09-09T18:37:37 IST" duration-ms="892" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- terDOwn -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.tutorialsninja.qa.testcases.Register@2d901eb0]" started-at="2025-09-09T15:15:15 IST" name="setup" finished-at="2025-09-09T15:15:20 IST" duration-ms="4714" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.tutorialsninja.qa.testcases.SearchProduct@8519cb4]" started-at="2025-09-09T18:37:37 IST" name="setup" finished-at="2025-09-09T18:37:41 IST" duration-ms="4736" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyRegisterPageWithEmptyValues()[pri:0, instance:com.tutorialsninja.qa.testcases.Register@2d901eb0]" started-at="2025-09-09T15:15:20 IST" name="verifyRegisterPageWithEmptyValues" finished-at="2025-09-09T15:15:21 IST" duration-ms="1052" status="PASS">
+        <test-method signature="serachInValidProduct()[pri:2, instance:com.tutorialsninja.qa.testcases.SearchProduct@8519cb4]" started-at="2025-09-09T18:37:41 IST" name="serachInValidProduct" finished-at="2025-09-09T18:37:42 IST" duration-ms="378" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyRegisterPageWithEmptyValues -->
-        <test-method is-config="true" signature="terDOwn()[pri:0, instance:com.tutorialsninja.qa.testcases.Register@2d901eb0]" started-at="2025-09-09T15:15:21 IST" name="terDOwn" finished-at="2025-09-09T15:15:22 IST" duration-ms="949" status="PASS">
+        </test-method> <!-- serachInValidProduct -->
+        <test-method is-config="true" signature="terDOwn()[pri:0, instance:com.tutorialsninja.qa.testcases.SearchProduct@8519cb4]" started-at="2025-09-09T18:37:42 IST" name="terDOwn" finished-at="2025-09-09T18:37:44 IST" duration-ms="2227" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- terDOwn -->
-      </class> <!-- com.tutorialsninja.qa.testcases.Register -->
+      </class> <!-- com.tutorialsninja.qa.testcases.SearchProduct -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
