@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import com.tutorialsninja.qa.utility.Base;
 
-public class LoginJava extends Base {
+public class Login extends Base {
 
 	@BeforeMethod
 

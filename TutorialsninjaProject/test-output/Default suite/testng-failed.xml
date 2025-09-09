@@ -6,8 +6,8 @@
       <class name="com.tutorialsninja.qa.testcases.Register">
         <methods>
           <include name="terDOwn"/>
-          <include name="verifyRegisterPage"/>
           <include name="setup"/>
+          <include name="verifyRegisterPageWithEmptyValues"/>
         </methods>
       </class> <!-- com.tutorialsninja.qa.testcases.Register -->
     </classes>

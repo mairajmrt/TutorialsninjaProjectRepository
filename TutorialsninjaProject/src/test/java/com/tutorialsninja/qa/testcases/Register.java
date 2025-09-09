@@ -16,7 +16,7 @@ public class Register extends Base {
 		openBrowserApplication();
 	}
 
-	@Test
+	@Test(priority = 1)
 
 	public void verifyRegisterPage() {
 
@@ -35,6 +35,38 @@ public class Register extends Base {
 				.findElement(By.xpath("//h1[normalize-space()='Your Account Has Been Created!']")).getText();
 		String expectedWelcomeMessage = "Your Account Has Been Created!";
 		Assert.assertEquals(actualWelcomeMessage, expectedWelcomeMessage);
+	}
+
+	@Test(priority = 2)
+
+	public void verifyRegisterPageWithEmptyValues() {
+
+		driver.findElement(By.linkText("My Account")).click();
+		driver.findElement(By.linkText("Register")).click();
+		driver.findElement(By.xpath("//input[@value='Continue']")).click();
+		String actualFirstName = driver
+				.findElement(By.xpath("//div[contains(text(),'First Name must be between 1 and 32 characters!')]"))
+				.getText();
+		Assert.assertEquals(actualFirstName, "First Name must be between 1 and 32 characters!",
+				"Firstname is not displayed");
+		String actualLastName = driver
+				.findElement(By.xpath("//div[contains(text(),'Last Name must be between 1 and 32 characters!')]"))
+				.getText();
+		Assert.assertEquals(actualLastName, "Last Name must be between 1 and 32 characters!",
+				"Lastname is not displayed");
+		String actualEmail = driver
+				.findElement(By.xpath("//div[contains(text(),'E-Mail Address does not appear to be valid!')]"))
+				.getText();
+		Assert.assertEquals(actualEmail, "E-Mail Address does not appear to be valid!", "Email is not displayed");
+		String actualTel = driver
+				.findElement(By.xpath("//div[contains(text(),'Telephone must be between 3 and 32 characters!')]"))
+				.getText();
+		Assert.assertEquals(actualTel, "Telephone must be between 3 and 32 characters!", "Telephone is not displayed");
+		String actualPass = driver
+				.findElement(By.xpath("//div[contains(text(),'Password must be between 4 and 20 characters!')]"))
+				.getText();
+		Assert.assertEquals(actualPass, "Password must be between 4 and 20 characters!", "Password is not displayed");
+
 	}
 
 	@AfterMethod

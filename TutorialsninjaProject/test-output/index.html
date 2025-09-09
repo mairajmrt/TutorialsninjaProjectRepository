@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\mali204\AppData\Local\Temp\testng-eclipse-253494113\testng-customsuite.xml</span>
+                    <span>C:\Users\mali204\AppData\Local\Temp\testng-eclipse--1516705067\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,6 +104,11 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Default_suite" title="com.tutorialsninja.qa.testcases.Register" class="method navigator-link" hash-for-method="verifyRegisterPage">verifyRegisterPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.tutorialsninja.qa.testcases.Register" class="method navigator-link" hash-for-method="verifyRegisterPageWithEmptyValues">verifyRegisterPageWithEmptyValues</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -131,12 +136,19 @@
                   <span class="method-name">verifyRegisterPage</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyRegisterPageWithEmptyValues">
+                  </a> <!-- verifyRegisterPageWithEmptyValues -->
+                  <span class="method-name">verifyRegisterPageWithEmptyValues</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Default_suite-class-passed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\mali204\AppData\Local\Temp\testng-eclipse-253494113\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\mali204\AppData\Local\Temp\testng-eclipse--1516705067\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -185,11 +197,15 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'verifyRegisterPage')
 data.setCell(0, 2, 'com.tutorialsninja.qa.testcases.Register')
-data.setCell(0, 3, 2628);
+data.setCell(0, 3, 1864);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'verifyRegisterPageWithEmptyValues')
+data.setCell(1, 2, 'com.tutorialsninja.qa.testcases.Register')
+data.setCell(1, 3, 1052);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
@@ -227,11 +243,23 @@ return data;
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyRegisterPage</span>
-                <span class="method-start">6635 ms</span>
+                <span class="method-start">5867 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">terDOwn</span>
-                <span class="method-start">9268 ms</span>
+                <span class="method-start">7731 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">8683 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyRegisterPageWithEmptyValues</span>
+                <span class="method-start">13397 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">terDOwn</span>
+                <span class="method-start">14449 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
