@@ -1,18 +1,21 @@
 package com.tutorialsninja.qa.testcases;
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import com.tutorialsninja.qa.utility.Base;
-import com.tutorialsninja.qa.utility.CommonUtils;
 
-public class Register extends Base {
+import com.tutorialsninja.qa.base.Base;
+import com.tutorialsninja.qa.utility.Utils;
+
+public class RegisterPageTest extends Base {
 
 	@BeforeMethod
 
-	public void setup() {
+	public void setup() throws IOException {
 		openBrowserApplication();
 	}
 
@@ -24,7 +27,7 @@ public class Register extends Base {
 		driver.findElement(By.linkText("Register")).click();
 		driver.findElement(By.xpath("//input[@id='input-firstname']")).sendKeys("mairaj");
 		driver.findElement(By.xpath("//input[@id='input-lastname']")).sendKeys("ali");
-		driver.findElement(By.xpath("//input[@id='input-email']")).sendKeys(CommonUtils.getNewEmailAddress());
+		driver.findElement(By.xpath("//input[@id='input-email']")).sendKeys(Utils.getNewEmailAddress());
 		driver.findElement(By.xpath("//input[@id='input-telephone']")).sendKeys("9634068065");
 		driver.findElement(By.xpath("//input[@id='input-password']")).sendKeys("mairaj");
 		driver.findElement(By.xpath("//input[@id='input-confirm']")).sendKeys("mairaj");

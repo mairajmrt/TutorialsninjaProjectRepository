@@ -1,6 +1,8 @@
-package com.tutorialsninja.qa.utility;
+package com.tutorialsninja.qa.base;
 
+import java.io.IOException;
 import java.time.Duration;
+import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,36 +11,39 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import com.tutorialsninja.qa.utility.Utils;
+
 public class Base {
 
-	public WebDriver driver;
+	protected WebDriver driver;
+	protected Properties prop;
 
-	public void openBrowserApplication() {
-		String browserName = "firefox";
+	public void openBrowserApplication() throws IOException {
+		prop = Utils.getPropertyFile();
 
-		if (browserName.equals("chrome")) {
+		if (prop.getProperty("brosername").equals("chrome")) {
 			driver = new ChromeDriver();
 		}
 
-		else if (browserName.equals("firefox")) {
+		else if (prop.getProperty("brosername").equals("firefox")) {
 			driver = new FirefoxDriver();
 		}
 
-		else if (browserName.equals("edge")) {
+		else if (prop.getProperty("brosername").equals("edge")) {
 			driver = new EdgeDriver();
 		}
 
-		else if (browserName.equals("ie")) {
+		else if (prop.getProperty("brosername").equals("ie")) {
 			driver = new InternetExplorerDriver();
 		}
 
-		else if (browserName.equals("safari")) {
+		else if (prop.getProperty("brosername").equals("safari")) {
 			driver = new SafariDriver();
 		}
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 		driver.manage().window().maximize();
-		driver.get("https://tutorialsninja.com/demo/");
+		driver.get(prop.getProperty("url"));
 
 	}
 

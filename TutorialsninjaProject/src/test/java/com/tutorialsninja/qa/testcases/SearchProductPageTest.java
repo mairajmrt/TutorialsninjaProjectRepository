@@ -1,18 +1,20 @@
 package com.tutorialsninja.qa.testcases;
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import com.tutorialsninja.qa.utility.Base;
+import com.tutorialsninja.qa.base.Base;
 
-public class SearchProduct extends Base {
+public class SearchProductPageTest extends Base {
 
 	@BeforeMethod
 
-	public void setup() {
+	public void setup() throws IOException {
 		openBrowserApplication();
 	}
 
