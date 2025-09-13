@@ -47,4 +47,13 @@ public class Base {
 
 	}
 
+	public void closeBrowserApplication() {
+
+		if (driver != null) {
+			driver.quit();
+
+		}
+
+	}
+
 }

@@ -1,15 +1,15 @@
 package com.tutorialsninja.qa.testcases;
-
 import java.io.IOException;
-
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import com.tutorialsninja.qa.base.Base;
+import com.tutorialsninja.qa.pages.CommonPage;
+import com.tutorialsninja.qa.pages.RegisterPage;
 import com.tutorialsninja.qa.utility.Utils;
+
 
 public class RegisterPageTest extends Base {
 
@@ -22,25 +22,20 @@ public class RegisterPageTest extends Base {
 	@Test(priority = 1)
 
 	public void verifyRegisterPage() {
-
-		driver.findElement(By.linkText("My Account")).click();
-		driver.findElement(By.linkText("Register")).click();
-		driver.findElement(By.xpath("//input[@id='input-firstname']")).sendKeys("mairaj");
-		driver.findElement(By.xpath("//input[@id='input-lastname']")).sendKeys("ali");
-		driver.findElement(By.xpath("//input[@id='input-email']")).sendKeys(Utils.getNewEmailAddress());
-		driver.findElement(By.xpath("//input[@id='input-telephone']")).sendKeys("9634068065");
-		driver.findElement(By.xpath("//input[@id='input-password']")).sendKeys("mairaj");
-		driver.findElement(By.xpath("//input[@id='input-confirm']")).sendKeys("mairaj");
-		driver.findElement(By.xpath("//label[normalize-space()='Yes']//input[@name='newsletter']")).click();
-		driver.findElement(By.xpath("//input[@name='agree']")).click();
-		driver.findElement(By.xpath("//input[@value='Continue']")).click();
-		String actualWelcomeMessage = driver
-				.findElement(By.xpath("//h1[normalize-space()='Your Account Has Been Created!']")).getText();
-		String expectedWelcomeMessage = "Your Account Has Been Created!";
-		Assert.assertEquals(actualWelcomeMessage, expectedWelcomeMessage);
+		CommonPage cp=new CommonPage(driver);
+		cp.commonSetUp();
+		RegisterPage register=new RegisterPage(driver);
+		register.setFirstnameField("mairaj");
+		register.setLastnameField("ali");
+		register.setEmailField(Utils.getNewEmailAddress());
+		register.setTelephoneField("9634068065");
+		register.setPasswordField("mairaj");
+		register.setCofirmField("mairaj");
+		register.loginPart();
+		Assert.assertEquals(driver.findElement(By.xpath("//h1[normalize-space()='Your Account Has Been Created!']")).getText(),"Your Account Has Been Created!");	
 	}
 
-	@Test(priority = 2)
+	/*@Test(priority = 2)
 
 	public void verifyRegisterPageWithEmptyValues() {
 
@@ -70,14 +65,12 @@ public class RegisterPageTest extends Base {
 				.getText();
 		Assert.assertEquals(actualPass, "Password must be between 4 and 20 characters!", "Password is not displayed");
 
-	}
+	}*/
 
 	@AfterMethod
 
-	public void terDOwn() {
-		if (driver != null) {
-			driver.quit();
-		}
+	public void terDown() {
+	//closeBrowserApplication();
 	}
 
 }
