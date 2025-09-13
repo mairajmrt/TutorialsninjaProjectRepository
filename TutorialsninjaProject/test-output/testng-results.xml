@@ -1,25 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-12T18:52:01 IST" name="Default suite" finished-at="2025-09-12T18:52:08 IST" duration-ms="7160">
+  <suite started-at="2025-09-13T13:30:24 IST" name="Default suite" finished-at="2025-09-13T13:30:38 IST" duration-ms="13600">
     <groups>
     </groups>
-    <test started-at="2025-09-12T18:52:01 IST" name="Default test" finished-at="2025-09-12T18:52:08 IST" duration-ms="7160">
-      <class name="com.tutorialsninja.qa.testcases.RegisterPageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.tutorialsninja.qa.testcases.RegisterPageTest@3ba987b8]" started-at="2025-09-12T18:52:01 IST" name="setup" finished-at="2025-09-12T18:52:07 IST" duration-ms="5183" status="PASS">
+    <test started-at="2025-09-13T13:30:24 IST" name="Default test" finished-at="2025-09-13T13:30:38 IST" duration-ms="13600">
+      <class name="com.tutorialsninja.qa.testcases.SearchProductPageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.tutorialsninja.qa.testcases.SearchProductPageTest@2d901eb0]" started-at="2025-09-13T13:30:24 IST" name="setup" finished-at="2025-09-13T13:30:29 IST" duration-ms="5006" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyRegisterPage()[pri:1, instance:com.tutorialsninja.qa.testcases.RegisterPageTest@3ba987b8]" started-at="2025-09-12T18:52:07 IST" name="verifyRegisterPage" finished-at="2025-09-12T18:52:08 IST" duration-ms="1931" status="PASS">
+        <test-method signature="serachValidProduct()[pri:1, instance:com.tutorialsninja.qa.testcases.SearchProductPageTest@2d901eb0]" started-at="2025-09-13T13:30:29 IST" name="serachValidProduct" finished-at="2025-09-13T13:30:30 IST" duration-ms="520" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyRegisterPage -->
-        <test-method is-config="true" signature="terDown()[pri:0, instance:com.tutorialsninja.qa.testcases.RegisterPageTest@3ba987b8]" started-at="2025-09-12T18:52:08 IST" name="terDown" finished-at="2025-09-12T18:52:08 IST" duration-ms="0" status="PASS">
+        </test-method> <!-- serachValidProduct -->
+        <test-method is-config="true" signature="terDown()[pri:0, instance:com.tutorialsninja.qa.testcases.SearchProductPageTest@2d901eb0]" started-at="2025-09-13T13:30:30 IST" name="terDown" finished-at="2025-09-13T13:30:31 IST" duration-ms="939" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- terDown -->
-      </class> <!-- com.tutorialsninja.qa.testcases.RegisterPageTest -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.tutorialsninja.qa.testcases.SearchProductPageTest@2d901eb0]" started-at="2025-09-13T13:30:31 IST" name="setup" finished-at="2025-09-13T13:30:37 IST" duration-ms="5744" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="serachInValidProduct()[pri:2, instance:com.tutorialsninja.qa.testcases.SearchProductPageTest@2d901eb0]" started-at="2025-09-13T13:30:37 IST" name="serachInValidProduct" finished-at="2025-09-13T13:30:37 IST" duration-ms="374" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- serachInValidProduct -->
+        <test-method is-config="true" signature="terDown()[pri:0, instance:com.tutorialsninja.qa.testcases.SearchProductPageTest@2d901eb0]" started-at="2025-09-13T13:30:37 IST" name="terDown" finished-at="2025-09-13T13:30:38 IST" duration-ms="970" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- terDown -->
+      </class> <!-- com.tutorialsninja.qa.testcases.SearchProductPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -64,7 +64,7 @@ public class RegisterPage {
 	PageFactory.initElements(driver, this);
 	}
 	
-	public void loginPart() {
+	public void registerUser() {
 		subscribeBtn.click();
 		privacyPolicyBtn.click();
 		continueBtn.click();

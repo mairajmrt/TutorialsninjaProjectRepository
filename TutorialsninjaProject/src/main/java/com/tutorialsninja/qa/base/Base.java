@@ -18,7 +18,7 @@ public class Base {
 	protected WebDriver driver;
 	protected Properties prop;
 
-	public void openBrowserApplication() throws IOException {
+	public void openBrowserWithWebApp() throws IOException {
 		prop = Utils.getPropertyFile();
 
 		if (prop.getProperty("brosername").equals("chrome")) {
@@ -47,7 +47,7 @@ public class Base {
 
 	}
 
-	public void closeBrowserApplication() {
+	public void closeBrowserWithWebApp() {
 
 		if (driver != null) {
 			driver.quit();

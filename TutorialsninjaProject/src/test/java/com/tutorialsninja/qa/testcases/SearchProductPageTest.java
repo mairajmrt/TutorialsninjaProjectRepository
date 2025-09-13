@@ -9,30 +9,31 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.tutorialsninja.qa.base.Base;
+import com.tutorialsninja.qa.pages.SearchProductPage;
 
 public class SearchProductPageTest extends Base {
 
 	@BeforeMethod
 
 	public void setup() throws IOException {
-		openBrowserApplication();
+		openBrowserWithWebApp();
 	}
 
 	@Test(priority = 1)
 
 	void serachValidProduct() {
-		driver.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys("HP");
-		driver.findElement(By.xpath("//button[@class='btn btn-default btn-lg']")).click();
-		String actaulProductName = driver.findElement(By.xpath("//a[normalize-space()='HP LP3065']")).getText();
-		String expectedProductName = "HP LP3065";
-		Assert.assertEquals(actaulProductName, expectedProductName);
+		SearchProductPage sp=new SearchProductPage(driver);
+		sp.setSearchField("HP");
+		sp.searchProduct();
+		Assert.assertEquals(driver.findElement(By.xpath("//a[normalize-space()='HP LP3065']")).getText(), "HP LP3065");
 	}
 
 	@Test(priority = 2)
 
 	void serachInValidProduct() {
-		driver.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys("HP123");
-		driver.findElement(By.xpath("//button[@class='btn btn-default btn-lg']")).click();
+		SearchProductPage sp=new SearchProductPage(driver);
+		sp.setSearchField("HP123");
+		sp.searchProduct();
 		String actaulProductName = driver
 				.findElement(By.xpath("//p[contains(text(),'There is no product that matches the search criter')]"))
 				.getText();
@@ -42,10 +43,8 @@ public class SearchProductPageTest extends Base {
 
 	@AfterMethod
 
-	public void terDOwn() {
-		if (driver != null) {
-			driver.quit();
-		}
+	public void terDown() {
+		closeBrowserWithWebApp();
 	}
 
 }

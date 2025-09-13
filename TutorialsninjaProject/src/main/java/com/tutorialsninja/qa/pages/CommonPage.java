@@ -14,6 +14,9 @@ public class CommonPage {
 	
 	@FindBy(linkText = "Register")
 	WebElement btnRegister;
+	
+	@FindBy(linkText = "Login")
+	WebElement btnLogin;
 
 	public CommonPage(WebDriver driver123) {
 	this.driver=driver123;
@@ -21,9 +24,15 @@ public class CommonPage {
 		
 	}
 	
-	public void commonSetUp() {
+	public void registerSetUp() {
 		btnMyAccount.click();
 		btnRegister.click();
+		
+	}
+	
+	public void loginSetUp() {
+		btnMyAccount.click();
+		btnLogin.click();
 		
 	}
 	

@@ -7,12 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
 
-	@FindBy(linkText = "My Account")
-	WebElement acountBtn;
-
-	@FindBy(linkText = "Login")
-	WebElement loginBtn;
-
 	@FindBy(xpath = "//input[@id='input-email']")
 	WebElement emailField;
 
@@ -20,7 +14,7 @@ public class LoginPage {
 	WebElement passField;
 
 	@FindBy(xpath = "//input[@value='Login']")
-	WebElement loginBtn2;
+	WebElement loginBtn;
 
 	private WebDriver driver;
 
@@ -30,8 +24,7 @@ public class LoginPage {
 	}
 
 	public void getEMailAdress(String emailName) {
-		acountBtn.click();
-		loginBtn.click();
+
 		emailField.sendKeys(emailName);
 	}
 
@@ -39,9 +32,8 @@ public class LoginPage {
 		passField.sendKeys(password);
 	}
 
-	public void loginPage() {
-
-		loginBtn2.click();
+	public void loginUser() {
+		loginBtn.click();
 	}
 
 }
