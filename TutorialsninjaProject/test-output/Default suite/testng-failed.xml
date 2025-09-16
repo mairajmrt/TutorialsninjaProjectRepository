@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.tutorialsninja.qa.testcases.SearchProductPageTest">
+      <class name="com.tutorialsninja.qa.testcases.RegisterPageTest">
         <methods>
-          <include name="serachValidProduct"/>
           <include name="terDown"/>
           <include name="setup"/>
-          <include name="serachInValidProduct"/>
+          <include name="verifyRegisterPageWithEmptyValues"/>
         </methods>
-      </class> <!-- com.tutorialsninja.qa.testcases.SearchProductPageTest -->
+      </class> <!-- com.tutorialsninja.qa.testcases.RegisterPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

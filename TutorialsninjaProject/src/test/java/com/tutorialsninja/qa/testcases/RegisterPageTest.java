@@ -1,5 +1,9 @@
 package com.tutorialsninja.qa.testcases;
 import java.io.IOException;
+
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -12,6 +16,10 @@ import com.tutorialsninja.qa.utility.Utils;
 
 public class RegisterPageTest extends Base {
 
+	private XSSFWorkbook workbook;
+	private XSSFSheet sheet;
+	private XSSFRow row;
+
 	@BeforeMethod
 
 	public void setup() throws IOException {
@@ -20,16 +28,19 @@ public class RegisterPageTest extends Base {
 
 	@Test(priority = 1)
 
-	public void verifyRegisterPage() {
+	public void verifyRegisterPage() throws IOException {
 		CommonPage cp = new CommonPage(driver);
 		cp.registerSetUp();
 		RegisterPage register = new RegisterPage(driver);
-		register.setFirstnameField("mairaj");
-		register.setLastnameField("ali");
+		workbook=Utils.getExcellFile();
+		sheet=workbook.getSheetAt(1);
+		row=sheet.getRow(0);
+		register.setFirstnameField(row.getCell(0).getStringCellValue());
+		register.setLastnameField(row.getCell(1).getStringCellValue());
 		register.setEmailField(Utils.getNewEmailAddress());
-		register.setTelephoneField("9634068065");
-		register.setPasswordField("mairaj");
-		register.setCofirmField("mairaj");
+		register.setTelephoneField(row.getCell(2).getStringCellValue());
+		register.setPasswordField(row.getCell(3).getStringCellValue());
+		register.setCofirmField(row.getCell(4).getStringCellValue());
 		register.registerUser();
 		Assert.assertEquals(
 				driver.findElement(By.xpath("//h1[normalize-space()='Your Account Has Been Created!']")).getText(),
@@ -38,21 +49,22 @@ public class RegisterPageTest extends Base {
 
 	@Test(priority = 2)
 
-	public void verifyRegisterPageWithEmptyValues() {
+	public void verifyRegisterPageWithEmptyValues() throws IOException {
 
 		CommonPage cp = new CommonPage(driver);
 		cp.registerSetUp();
 		RegisterPage register = new RegisterPage(driver);
-		register.setFirstnameField("");
-		register.setLastnameField("");
+		row=sheet.getRow(1);
+		register.setFirstnameField(row.getCell(0).getStringCellValue());
+		register.setLastnameField(row.getCell(1).getStringCellValue());
 		register.setEmailField("");
-		register.setTelephoneField("");
-		register.setPasswordField("");
-		register.setCofirmField("");
+		register.setTelephoneField(row.getCell(2).getStringCellValue());
+		register.setPasswordField(row.getCell(3).getStringCellValue());
+		register.setCofirmField(row.getCell(4).getStringCellValue());
 		register.registerUser();
 		Assert.assertEquals(driver
-				.findElement(By.xpath("//div[contains(text(),'First Name must be between 1 and 32 characters!')]"))
-				.getText(), "First Name must be between 1 and 32 characters!");
+				.findElement(By.xpath("//div[@class='text-danger']"))
+				.getText(), "E-Mail Address does not appear to be valid!");
 
 	}
 

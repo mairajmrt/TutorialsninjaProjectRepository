@@ -25,6 +25,15 @@ public class RegisterPage {
 
 	@FindBy(xpath = "//input[@id='input-confirm']")
 	WebElement cofirmField;
+	
+	@FindBy(xpath = "//input[@value='0']")
+	WebElement subscribeBtn;
+
+	@FindBy(xpath = "//input[@name='agree']")
+	WebElement privacyPolicyBtn;
+
+	@FindBy(xpath = "//input[@value='Continue']")
+	WebElement continueBtn;
 
 	public void setFirstnameField(String firststname) {
 		firstnameField.sendKeys(firststname);
@@ -50,15 +59,6 @@ public class RegisterPage {
 		cofirmField.sendKeys(confirm);;
 	}
 
-	@FindBy(xpath = "//input[@value='0']")
-	WebElement subscribeBtn;
-
-	@FindBy(xpath = "//input[@name='agree']")
-	WebElement privacyPolicyBtn;
-
-	@FindBy(xpath = "//input[@value='Continue']")
-	WebElement continueBtn;
-	
 	public RegisterPage(WebDriver driver123){
 	this.driver=driver123;
 	PageFactory.initElements(driver, this);

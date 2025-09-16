@@ -7,6 +7,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Date;
 import java.util.Properties;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class Utils {
 
@@ -30,10 +31,15 @@ public class Utils {
 
 	public static Properties getPropertyFile() throws IOException {
 		FileInputStream file = new FileInputStream(System.getProperty("user.dir") + "\\src\\config\\prop.properties");
-		prop=new Properties();
+		prop = new Properties();
 		prop.load(file);
 		return prop;
 
 	}
 
+	public static XSSFWorkbook getExcellFile() throws IOException {
+		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\src\\file\\webdata.xlsx");
+		XSSFWorkbook workbook = new XSSFWorkbook(fis);
+		return workbook;
+	}
 }
